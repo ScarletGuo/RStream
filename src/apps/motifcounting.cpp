@@ -44,7 +44,7 @@ public:
 
 
 void main_nonshuffle(int argc, char **argv) {
-	Engine e(std::string(argv[1]), atoi(argv[2]), 1);
+	Engine e(std::string(argv[1]), atoi(argv[2]), 0);
 	std::cout << Logger::generate_log_del(std::string("finish preprocessing"), 1) << std::endl;
 
 	ResourceManager rm;

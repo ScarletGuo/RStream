@@ -56,8 +56,9 @@ namespace RStream {
 			std::cout << "Number of write threads: " << num_write_threads << std::endl;
 			std::cout << std::endl;
 
-//			for(int i = 0; i < num_partitions; i++)
-//				std::cout << "partition " << i << " , start: " << vertex_intervals[i].first << " , end: " << vertex_intervals[i].second << std::endl;
+			// zhihan: uncomment
+			for(int i = 0; i < num_partitions; i++)
+				std::cout << "partition " << i << " , start: " << vertex_intervals[i].first << " , end: " << vertex_intervals[i].second << std::endl;
 		}
 
 		Engine::~Engine(){
