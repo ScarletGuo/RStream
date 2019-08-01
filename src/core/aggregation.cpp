@@ -27,8 +27,10 @@ namespace RStream {
 		 * @return: aggregation stream
 		 * */
 		Aggregation_Stream Aggregation::aggregate(Update_Stream in_update_stream, int sizeof_in_tuple) {
+		    // aggregate local
 			Aggregation_Stream stream_local = aggregate_local(in_update_stream, sizeof_in_tuple);
 			int sizeof_agg = get_out_size(sizeof_in_tuple);
+			// aggregate global
 			Aggregation_Stream agg_stream = aggregate_global(stream_local, sizeof_agg);
 			delete_aggstream(stream_local);
 			return agg_stream;
@@ -44,8 +46,9 @@ namespace RStream {
 
 		void Aggregation::printout_aggstream(Aggregation_Stream agg_stream, int sizeof_in_tuple){
 			int sizeof_agg = get_out_size(sizeof_in_tuple);
-//			std::cout << "Number of tuples in agg "<< agg_stream << ": \t" << get_count(agg_stream, sizeof_agg) << std::endl;
-//			std::cout << "Size of agg: \t" << sizeof_agg << std::endl;
+			// zhihan: uncomment
+			std::cout << "Number of tuples in agg "<< agg_stream << ": \t" << get_count(agg_stream, sizeof_agg) << std::endl;
+			std::cout << "Size of agg: \t" << sizeof_agg << std::endl;
 			unsigned int count = get_count(agg_stream, sizeof_agg);
 			std::cout << "a, " << agg_stream << ", " << count << ", " << sizeof_agg << ", " << (count * sizeof_agg) << std::endl;
 		}
@@ -435,7 +438,8 @@ namespace RStream {
 			// tuples -- canonical pattern
 			// count -- counter for patterns
 			int sizeof_output = get_out_size(sizeof_in_tuple);
-//			std::cout << "size_of_in_tuple = " << sizeof_in_tuple << ", size_of_agg = " << sizeof_output << std::endl;
+			std::cout << "aggregate local: " << std::endl;
+			std::cout << "size_of_in_tuple = " << sizeof_in_tuple << ", size_of_agg = " << sizeof_output << std::endl;
 			// allocate global buffers for shuffling
 			global_buffer_for_mining ** buffers_for_shuffle = buffer_manager_for_mining::get_global_buffers_for_mining(context.num_partitions, sizeof_output);
 
@@ -827,6 +831,7 @@ namespace RStream {
 //				long offset = 0;
 				long offset = offset_task;
 
+				// quick pattern aggregation
 				std::unordered_map<Quick_Pattern, int> quick_patterns_aggregation;
 
 				// for all streaming updates
@@ -850,24 +855,32 @@ namespace RStream {
 //						MPhase::get_an_in_update(update_local_buf + pos, in_update_tuple, sizeof_in_tuple);
 						MTuple in_update_tuple(sizeof_in_tuple);
 						MPhase::get_an_in_update(update_local_buf + pos, in_update_tuple);
-//						std::cout << "in_update: \t" << in_update_tuple << std::endl;
+                        // zhihan: uncomment
+                        std::cout << "get an in update tuple" << std::endl;
+						std::cout << "in_update: \t" << in_update_tuple << std::endl;
 
 						// turn tuple to quick pattern
 						Quick_Pattern quick_pattern(sizeof_in_tuple);
 						Pattern::turn_quick_pattern_pure(in_update_tuple, quick_pattern, label_flag);
-//						std::cout << "quick_pattern: \t" << quick_pattern << std::endl;
-//						std::cout << "in_update: \t" << in_update_tuple << std::endl;
-//						std::cout << std::endl;
+						// zhihan: uncomment
+						std::cout << "turn tuple into quick pattern" << std::endl;
+						std::cout << "quick_pattern: \t" << quick_pattern << std::endl;
+						std::cout << "in_update: \t" << in_update_tuple << std::endl;
+						std::cout << std::endl;
 						aggregate_on_quick_pattern(quick_patterns_aggregation, quick_pattern);
 					}
 
-//					//for debugging
-//					printout_quickpattern_aggmap(quick_patterns_aggregation);
+					//zhihan: for debugging
+                    std::cout << "print out quick pattern" << std::endl;
+					printout_quickpattern_aggmap(quick_patterns_aggregation);
 
 				}
 
 				std::unordered_map<Canonical_Graph, int> canonical_graphs_aggregation;
 				aggregate_on_canonical_graph(canonical_graphs_aggregation, quick_patterns_aggregation);
+				// zhihan: print out canonical graph
+                std::cout << "print out canonical graph" << std::endl;
+				printout_cg_aggmap(canonical_graphs_aggregation)
 
 				// for each canonical graph, do map reduce, shuffle to corresponding buckets
 				shuffle_canonical_aggregation(canonical_graphs_aggregation, buffers_for_shuffle);
