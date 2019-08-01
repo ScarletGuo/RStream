@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b8bfa1-6acc-4f2c-afe0-5c5f6b44306d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/aggregation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/aggregation.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564448760374</updated>
       <workItem from="1564448763588" duration="2343000" />
-      <workItem from="1564564581385" duration="3112000" />
+      <workItem from="1564564581385" duration="3160000" />
     </task>
     <servers />
   </component>

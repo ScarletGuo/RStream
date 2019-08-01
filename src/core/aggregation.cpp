@@ -880,7 +880,7 @@ namespace RStream {
 				aggregate_on_canonical_graph(canonical_graphs_aggregation, quick_patterns_aggregation);
 				// zhihan: print out canonical graph
                 std::cout << "print out canonical graph" << std::endl;
-				printout_cg_aggmap(canonical_graphs_aggregation)
+				printout_cg_aggmap(canonical_graphs_aggregation);
 
 				// for each canonical graph, do map reduce, shuffle to corresponding buckets
 				shuffle_canonical_aggregation(canonical_graphs_aggregation, buffers_for_shuffle);
