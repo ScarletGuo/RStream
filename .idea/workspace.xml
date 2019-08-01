@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b8bfa1-6acc-4f2c-afe0-5c5f6b44306d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/RStream.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/motifcounting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/motifcounting.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/mining_phase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/mining_phase.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +52,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564448760374</updated>
-      <workItem from="1564448763588" duration="1807000" />
+      <workItem from="1564448763588" duration="2343000" />
+      <workItem from="1564564581385" duration="743000" />
     </task>
     <servers />
   </component>
@@ -68,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -1210,10 +1210,11 @@ namespace RStream {
 					offset += valid_io_size;
 
 					// for each streaming
+					std::cout << "edges of streaming " << counter << ":\n" << std::endl;
 					for(long pos = 0; pos < valid_io_size; pos += size_of_unit) {
 						// get an labeled edge
 						LabeledEdge e = *(LabeledEdge*)(edge_local_buf + pos);
-//						std::cout << e << std::endl;
+						std::cout << e << std::endl;
 
 						std::vector<Element_In_Tuple> out_update_tuple;
 						out_update_tuple.push_back(Element_In_Tuple(e.src, 0, e.src_label));
