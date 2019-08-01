@@ -320,7 +320,9 @@ namespace RStream {
 				//build hashmap for aggregation tuples
 				std::unordered_map<Canonical_Graph, int> map;
 				build_aggmap(map, agg_local_buf, agg_file_size, sizeof_agg);
-//				printout_cg_aggmap(map);
+				// zhihan: printout canonical graph
+				std::cout << "printout canonical graph" << std::endl;
+				printout_cg_aggmap(map);
 
 
 				int fd_update = open((context.filename + "." + std::to_string(partition_id) + ".update_stream_" + std::to_string(in_update_stream)).c_str(), O_RDONLY);

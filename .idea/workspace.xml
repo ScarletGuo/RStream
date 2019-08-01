@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b8bfa1-6acc-4f2c-afe0-5c5f6b44306d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/mining_phase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/mining_phase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/aggregation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/aggregation.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Oi7rBh3lMH1jynfEJSQL5HCZDj" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -53,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564448760374</updated>
       <workItem from="1564448763588" duration="2343000" />
-      <workItem from="1564564581385" duration="743000" />
+      <workItem from="1564564581385" duration="2567000" />
     </task>
     <servers />
   </component>
